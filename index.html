@@ -1,105 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/manifest.json">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="theme-color" content="#ffffff">
-    <title>Historisk lager</title>
+<html lang="no">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="theme-color" content="#ffffff">
+		<title>Historisk lager</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	<style>
-	iframe#databaseEmbed {
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+		iframe#databaseEmbed {
 		width: 100%;
 		min-height: calc(100% - 65px);
 		border: none;
 		position: relative;
-	}
-	
-	iframe#formEmbed {
+		}
+
+		iframe#formEmbed {
 		width: 100%;
 		border: none;
 		position: relative;
 		height: calc(100vh - 20em);
 		min-height: 25em;
-	}
-	
-	.navbar-right li {
+		}
+
+		.navbar-right li {
 		padding-left: 0.5em;
-	}
-	
-	.navbar-brand img {
+		}
+
+		.navbar-brand img {
 		height: 1em;
 		position: relative;
 		top: -0.1em;
 		display: inline;
 		padding-right: 0.25em;
-	}
-	
-	html, body {
+		}
+
+		html, body {
 		height: 100%;
 		width: 100%;
 		overflow-y: hidden;
-	}
-	
-	.navbar {
+		}
+
+		.navbar {
 		margin-bottom: 0px! important;
-	}
-	</style>
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
-	  <div class="container-fluid">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </button>
-		  <a class="navbar-brand" href="#"><img src="icon.png">Historisk lager</a>
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#formModal">Kart</button>
-				</li>
-				<li>
-					<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#formModal">Legg til gjenstand</button>
-				</li>
-			</ul>
-		</div>
-	  </div>
-	</nav>
+		}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="icon.png">Historisk lager</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#formModal">Kart</button>
+						</li>
+						<li>
+							<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#formModal">Legg til gjenstand</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 	
 	<iframe id="databaseEmbed" seamless src="https://docs.google.com/spreadsheets/d/12OE0S0w51ADmfMFVTeDVUyWyREkHuX_x8wnahc3gJKw/pubhtml?gid=648464416&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 	<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
-	  <div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="myModalLabel">Gjenstandsskjema</h4>
-		  </div>
-		  <div class="modal-body">
-			<iframe id="formEmbed" src="https://docs.google.com/forms/d/e/1FAIpQLSc2jBU1QWwyEQjlF6QwkCW08XZ2WqXjjH0Sv8swZ2h85fsnwg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
-		  </div>
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Gjenstandsskjema</h4>
+				</div>
+				<div class="modal-body">
+					<iframe id="formEmbed" src="https://docs.google.com/forms/d/e/1FAIpQLSc2jBU1QWwyEQjlF6QwkCW08XZ2WqXjjH0Sv8swZ2h85fsnwg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+				</div>
+			</div>
 		</div>
-	  </div>
 	</div>
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
