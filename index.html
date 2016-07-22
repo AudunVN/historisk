@@ -55,13 +55,114 @@
 		.navbar {
 			margin-bottom: 0px! important;
 		}
+		
+		.mapContainer {
+			width: 24.5em;
+			height: 20em;
+			position: relative;
+			border: 1px solid #535398;
+			border-radius: 7px;
+		}
+		
+		.pallet {
+			background: #e2c659;
+			width: 2.33em;
+			height: 3.75em;
+			border: solid 1px black;
+		}
+		
+		.pallet.left {
+			transform: rotate(45deg);
+		}
+		
+		.pallet.right {
+			transform: rotate(-45deg);
+		}
+		
+		.pallet.right label {
+			transform: rotate(45deg);
+			right: -2.75em;
+			top: 2em;
+		}
+		
+		.pallet.left label {
+			transform: rotate(-45deg);
+			left: -2.75em;
+			top: 2em;
+		}
+		
+		.palletRow {
+			position: absolute;
+		}
+		
+		#lAPRow {
+			left: 8em;
+			top: 4em;
+		}
+		
+		#rAPRow {
+			left: 13em;
+			top: 4em;
+		}
+		
+		.shelf {
+			position: relative;
+			background: #b9acac;
+			border: solid 1px black;
+			height: 4em;
+			width: 1em;
+			margin-bottom: 0.1em;
+		}
+		
+		.shelf.horizontal {
+			width: 3.5em;
+			height: 1em;
+			float: left;
+			margin-bottom: 0;
+			margin-right: 0.1em;
+		}
+		
+		.mapContainer label {
+			position: absolute;
+		}
+		
+		.horizontal label {
+			top: -1.5em;
+			width: 100%;
+			text-align: center;
+		}
+		
+		.vertical label {
+			right: -1.25em;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		
+		.shelfRow {
+			position: absolute;
+		}
+		
+		#lARow {
+			left: 1.5em;
+			top: 2.75em;
+		}
+		
+		#uARow {
+			left: 5.75em;
+			top: 1.5em;
+		}
+		
+		#rARow {
+			left: 20.5em;
+			top: 2.75em;
+		}
 		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse" aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -69,10 +170,10 @@
 					</button>
 					<a class="navbar-brand" href="#"><img src="icon.png">Historisk lager</a>
 				</div>
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse" id="navCollapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#formModal">Kart</button>
+							<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#mapModal">Kart</button>
 						</li>
 						<li>
 							<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#formModal">Legg til gjenstand</button>
@@ -89,10 +190,103 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Gjenstandsskjema</h4>
+						<h4 class="modal-title" id="formModalLabel">Gjenstandsskjema</h4>
 					</div>
 					<div class="modal-body">
 						<iframe id="formEmbed" src="https://docs.google.com/forms/d/e/1FAIpQLSc2jBU1QWwyEQjlF6QwkCW08XZ2WqXjjH0Sv8swZ2h85fsnwg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="mapModalLabel">Oversiktskart</h4>
+					</div>
+					<div class="modal-body">
+						<div class="mapHeader">
+							<h2>DU4-102</h2>
+						</div>
+						<div class="mapContainer">
+							<div id="lARow" class="shelfRow vertical">
+								<div id="A1" class="shelf vertical">
+									<label>A1</label>
+								</div>
+								<div id="A2" class="shelf vertical">
+									<label>A2</label>
+								</div>
+								<div id="A3" class="shelf vertical">
+									<label>A3</label>
+								</div>
+								<div id="A4" class="shelf vertical">
+									<label>A4</label>
+								</div>
+							</div>
+							<div id="uARow" class="shelfRow horizontal">
+								<div id="A5" class="shelf horizontal">
+									<label>A5</label>
+								</div>
+								<div id="A6" class="shelf horizontal">
+									<label>A6</label>
+								</div>
+								<div id="A7" class="shelf horizontal">
+									<label>A7</label>
+								</div>
+								<div id="A8" class="shelf horizontal">
+									<label>A8</label>
+								</div>
+							</div>
+							<div id="rARow" class="shelfRow vertical">
+								<div id="A9" class="shelf vertical">
+									<label>A9</label>
+								</div>
+								<div id="A10" class="shelf vertical">
+									<label>A10</label>
+								</div>
+								<div id="A11" class="shelf vertical">
+									<label>A11</label>
+								</div>
+								<div id="A12" class="shelf vertical">
+									<label>A12</label>
+								</div>
+							</div>
+							<div id="lAPRow" class="palletRow">
+								<div id="A13" class="pallet left">
+									<label>A13</label>
+								</div>
+								<div id="A14" class="pallet left">
+									<label>A14</label>
+								</div>
+								<div id="A15" class="pallet left">
+									<label>A15</label>
+								</div>
+								<div id="A16" class="pallet left">
+									<label>A16</label>
+								</div>
+							</div>
+							<div id="rAPRow" class="palletRow">
+								<div id="A17" class="pallet right">
+									<label>A17</label>
+								</div>
+								<div id="A18" class="pallet right">
+									<label>A18</label>
+								</div>
+								<div id="A19" class="pallet right">
+									<label>A19</label>
+								</div>
+								<div id="A20" class="pallet right">
+									<label>A20</label>
+								</div>
+							</div>
+						</div>
+						<br>
+						<p>Plasseringer føres som koder på formatet [Romkode][Skap/pallenummer]-[Hyllenummer], der A1-1 for eksempel er den øverste hyllen på skap 1 på sted A.</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
