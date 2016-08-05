@@ -178,6 +178,9 @@
 				<div class="collapse navbar-collapse" id="navCollapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li>
+							<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#infoModal">Info</button>
+						</li>
+						<li>
 							<button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#mapModal">Kart</button>
 						</li>
 						<li>
@@ -292,6 +295,23 @@
 						</div>
 						<br>
 						<p>Plasseringer føres som koder på formatet [Romkode][Skap/pallenummer]-[Hyllenummer], der A1-1 for eksempel er den øverste hyllen på skap 1 på sted A.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="infoModalLabel">Info</h4>
+					</div>
+					<div class="modal-body">
+						<p>Under utvikling.</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
