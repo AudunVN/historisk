@@ -152,6 +152,11 @@
 			position: absolute;
 		}
 		
+		.mapContainer#areaA {
+			width: 24.5em;
+			height: 20em;
+		}
+		
 		#lARow {
 			left: 1.5em;
 			top: 2.75em;
@@ -166,6 +171,22 @@
 			left: 20.5em;
 			top: 2.75em;
 		}
+		
+		.mapContainer#areaD {
+			width: 9.5em;
+			height: 22em;
+		}
+		
+		#lDRow {
+			left: 1.5em;
+			top: 0.75em;
+		}
+		
+		#rDRow {
+			left: 5.5em;
+			top: 0.75em;
+		}
+		
 		</style>
 	</head>
 	<body>
@@ -235,10 +256,13 @@
 						<h4 class="modal-title" id="mapModalLabel">Oversiktskart</h4>
 					</div>
 					<div class="modal-body">
+						<h2>Info</h2>
+						<p>Plasseringer føres som koder på formatet [Romkode][Skap/pallenummer]-[Hyllenummer], der A1-1 for eksempel er den øverste hyllen på skap 1 på sted A.</p>
+						<h2>DU4-102</h2>
 						<div class="mapHeader">
-							<h2>DU4-102</h2>
+							<h3>Område A</h3>
 						</div>
-						<div class="mapContainer">
+						<div class="mapContainer" id="areaA">
 							<div id="lARow" class="shelfRow vertical">
 								<div id="A4" class="shelf vertical">
 									<label>A4</label>
@@ -310,8 +334,42 @@
 								</div>
 							</div>
 						</div>
-						<br>
-						<p>Plasseringer føres som koder på formatet [Romkode][Skap/pallenummer]-[Hyllenummer], der A1-1 for eksempel er den øverste hyllen på skap 1 på sted A.</p>
+						<div class="mapHeader">
+							<h3>Område D</h3>
+						</div>
+						<div class="mapContainer" id="areaD">
+							<div id="lDRow" class="shelfRow vertical">
+								<div id="D4" class="shelf vertical">
+									<label>D4</label>
+								</div>
+								<div id="D3" class="shelf vertical">
+									<label>D3</label>
+								</div>
+								<div id="D2" class="shelf vertical">
+									<label>D2</label>
+								</div>
+								<div id="D1" class="shelf vertical">
+									<label>D1</label>
+								</div>
+							</div>
+							<div id="rDRow" class="shelfRow vertical">
+								<div id="D5" class="shelf vertical">
+									<label>D5</label>
+								</div>
+								<div id="D6" class="shelf vertical">
+									<label>D6</label>
+								</div>
+								<div id="D7" class="shelf vertical">
+									<label>D7</label>
+								</div>
+								<div id="D8" class="shelf vertical">
+									<label>D8</label>
+								</div>
+								<div id="D9" class="shelf vertical">
+									<label>D9</label>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Lukk</button>
